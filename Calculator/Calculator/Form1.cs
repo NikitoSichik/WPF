@@ -17,13 +17,8 @@ namespace Calculator
         double first_num = 0;
         double second_num = 0;
         bool new_num = false;
-        public Form1()
-        {
-            InitializeComponent();
-            textBox.Text = "";
-        }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void numbers(object sender)
         {
             Button btn = (Button)sender;
             if (new_num == false)
@@ -34,12 +29,12 @@ namespace Calculator
             else
             {
                 cur_num += btn.Text;
-                second_num = first_num * 10 + int.Parse(btn.Text);
+                second_num = second_num * 10 + int.Parse(btn.Text);
             }
             textBox.Text = cur_num;
         }
 
-        private void plus_Click(object sender, EventArgs e)
+        private void znaki(object sender)
         {
             if (new_num == false)
             {
@@ -47,13 +42,127 @@ namespace Calculator
                 operation = btn.Text;
                 cur_num += btn.Text;
                 new_num = true;
+                textBox.Text = cur_num;
             }
-
         }
 
+        public Form1()
+        {
+            InitializeComponent();
+            textBox.Text = "";
+        }
+        private void C_Click(object sender, EventArgs e)
+        {
+            cur_num = "";
+            operation = "";
+            first_num = 0;
+            second_num = 0;
+            new_num = false;
+            textBox.Text = cur_num;
+        }
         private void rovno_Click(object sender, EventArgs e)
         {
-            
+            if(operation == "+")
+            {
+                double result = first_num + second_num;
+                cur_num = "" + result;
+                textBox.Text = cur_num;
+            }
+            if (operation == "-")
+            {
+                double result = first_num - second_num;
+                cur_num = "" + result;
+                textBox.Text = cur_num;
+            }
+            if (operation == "*") {
+                double result = first_num * second_num;
+                cur_num = "" + result;
+                textBox.Text = cur_num;
+            }
+            if (operation == "/")
+            {
+                double result = first_num / second_num;
+                cur_num = "" + result;
+                textBox.Text = cur_num;
+            }
+            if(operation == "^")
+            {
+                double result = first_num;
+                for (int i = 1; i < second_num; i++) result *= first_num;
+                cur_num = "" + result;
+                textBox.Text = cur_num;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            numbers(sender);
+        }
+
+        private void plus_Click(object sender, EventArgs e)
+        {
+            znaki(sender);
+        }
+
+
+        private void num9_Click(object sender, EventArgs e)
+        {
+            numbers(sender);
+        }
+
+        private void num6_Click(object sender, EventArgs e)
+        {
+            numbers(sender);
+        }
+
+        private void num5_Click(object sender, EventArgs e)
+        {
+            numbers(sender);
+        }
+
+        private void num4_Click(object sender, EventArgs e)
+        {
+            numbers(sender);
+        }
+
+        private void num1_Click(object sender, EventArgs e)
+        {
+            numbers(sender);
+        }
+
+        private void num2_Click(object sender, EventArgs e)
+        {
+            numbers(sender);
+        }
+
+        private void num3_Click(object sender, EventArgs e)
+        {
+            numbers(sender);
+        }
+
+        private void num0_Click(object sender, EventArgs e)
+        {
+            numbers(sender);
+        }
+
+        private void minus_Click(object sender, EventArgs e)
+        {
+            znaki(sender);
+        }
+
+        private void multiply_Click(object sender, EventArgs e)
+        {
+            znaki(sender);
+        }
+
+        private void division_Click(object sender, EventArgs e)
+        {
+            znaki(sender);
+        }
+
+        private void degree_Click(object sender, EventArgs e)
+        {
+            znaki(sender);
         }
     }
 }
