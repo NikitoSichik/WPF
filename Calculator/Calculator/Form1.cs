@@ -87,8 +87,7 @@ namespace Calculator
             }
             if(operation == "^")
             {
-                double result = first_num;
-                for (int i = 1; i < second_num; i++) result *= first_num;
+                double result = Math.Pow(first_num, second_num);
                 cur_num = "" + result;
                 textBox.Text = cur_num;
             }
