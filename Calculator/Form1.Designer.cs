@@ -63,7 +63,6 @@
             // 
             this.textBox.Location = new System.Drawing.Point(16, 12);
             this.textBox.Name = "textBox";
-            this.textBox.ReadOnly = true;
             this.textBox.Size = new System.Drawing.Size(209, 20);
             this.textBox.TabIndex = 1;
             this.textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
