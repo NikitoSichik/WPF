@@ -18,7 +18,7 @@ namespace Calculator
         double second_num = 0;
         bool new_num = false;
 
-        private void numbers(object sender)
+        private void numbers(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             if (new_num == false)
@@ -34,7 +34,7 @@ namespace Calculator
             textBox.Text = cur_num;
         }
 
-        private void znaki(object sender)
+        private void znaki(object sender, EventArgs e)
         {
             if (new_num == false)
             {
@@ -93,75 +93,8 @@ namespace Calculator
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            numbers(sender);
-        }
-
-        private void plus_Click(object sender, EventArgs e)
-        {
-            znaki(sender);
-        }
 
 
-        private void num9_Click(object sender, EventArgs e)
-        {
-            numbers(sender);
-        }
 
-        private void num6_Click(object sender, EventArgs e)
-        {
-            numbers(sender);
-        }
-
-        private void num5_Click(object sender, EventArgs e)
-        {
-            numbers(sender);
-        }
-
-        private void num4_Click(object sender, EventArgs e)
-        {
-            numbers(sender);
-        }
-
-        private void num1_Click(object sender, EventArgs e)
-        {
-            numbers(sender);
-        }
-
-        private void num2_Click(object sender, EventArgs e)
-        {
-            numbers(sender);
-        }
-
-        private void num3_Click(object sender, EventArgs e)
-        {
-            numbers(sender);
-        }
-
-        private void num0_Click(object sender, EventArgs e)
-        {
-            numbers(sender);
-        }
-
-        private void minus_Click(object sender, EventArgs e)
-        {
-            znaki(sender);
-        }
-
-        private void multiply_Click(object sender, EventArgs e)
-        {
-            znaki(sender);
-        }
-
-        private void division_Click(object sender, EventArgs e)
-        {
-            znaki(sender);
-        }
-
-        private void degree_Click(object sender, EventArgs e)
-        {
-            znaki(sender);
-        }
     }
 }
