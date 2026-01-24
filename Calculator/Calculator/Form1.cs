@@ -17,6 +17,10 @@ namespace Calculator
         double first_num = 0;
         double second_num = 0;
         bool new_num = false;
+        bool dot_first = false;
+        bool dot_second = false;
+        int dot_click_first = 0;
+        int dot_click_second = 0;
 
         private void numbers(object sender, EventArgs e)
         {
@@ -25,11 +29,15 @@ namespace Calculator
             {
                 cur_num += btn.Text;
                 first_num = first_num * 10 + int.Parse(btn.Text);
+                if (dot_first == true)
+                    dot_click_first++;
             }
             else
             {
                 cur_num += btn.Text;
                 second_num = second_num * 10 + int.Parse(btn.Text);
+                if (dot_second == true)
+                    dot_click_second++;
             }
             textBox.Text = cur_num;
         }
@@ -59,9 +67,21 @@ namespace Calculator
             second_num = 0;
             new_num = false;
             textBox.Text = cur_num;
+            dot_first = false;
+            dot_second = false;
+            dot_click_first = 0;
+            dot_click_second = 0;
         }
         private void rovno_Click(object sender, EventArgs e)
         {
+            // Dot
+            if (dot_first == true)
+                first_num /= (10 * dot_click_first);
+            if (dot_second == true)
+                second_num /= (10 * dot_click_second);
+
+
+
             if(operation == "+")
             {
                 double result = first_num + second_num;
@@ -93,7 +113,16 @@ namespace Calculator
             }
         }
 
+        private void dot_click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            cur_num += btn.Text;
 
+            if (new_num == false)
+                dot_first = true;
+            else dot_second = true;
+            textBox.Text = cur_num;
+        }
 
 
     }

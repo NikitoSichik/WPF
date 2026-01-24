@@ -46,6 +46,7 @@
             this.division = new System.Windows.Forms.Button();
             this.C = new System.Windows.Forms.Button();
             this.degree = new System.Windows.Forms.Button();
+            this.dot = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // num8
@@ -244,9 +245,21 @@
             this.degree.UseVisualStyleBackColor = true;
             this.degree.Click += new System.EventHandler(this.znaki);
             // 
+            // dot
+            // 
+            this.dot.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dot.Location = new System.Drawing.Point(188, 90);
+            this.dot.Name = "dot";
+            this.dot.Size = new System.Drawing.Size(37, 35);
+            this.dot.TabIndex = 18;
+            this.dot.Text = ".";
+            this.dot.UseVisualStyleBackColor = true;
+            this.dot.Click += new System.EventHandler(this.dot_click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(236, 222);
+            this.Controls.Add(this.dot);
             this.Controls.Add(this.degree);
             this.Controls.Add(this.C);
             this.Controls.Add(this.division);
@@ -291,6 +304,7 @@
         private System.Windows.Forms.Button division;
         private System.Windows.Forms.Button C;
         private System.Windows.Forms.Button degree;
+        private System.Windows.Forms.Button dot;
     }
 }
 
