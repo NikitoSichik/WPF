@@ -35,6 +35,11 @@
             this.buttonCalculator = new System.Windows.Forms.Button();
             this.result = new System.Windows.Forms.Label();
             this.Clear = new System.Windows.Forms.Button();
+            this.radBtnMan = new System.Windows.Forms.RadioButton();
+            this.radBtnWo = new System.Windows.Forms.RadioButton();
+            this.ageNum = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.ageNum)).BeginInit();
             this.SuspendLayout();
             // 
             // rost
@@ -52,7 +57,6 @@
             this.textBoxRost.Name = "textBoxRost";
             this.textBoxRost.Size = new System.Drawing.Size(100, 20);
             this.textBoxRost.TabIndex = 1;
-            this.textBoxRost.TextChanged += new System.EventHandler(this.textBoxRost_TextChanged);
             // 
             // ves
             // 
@@ -69,7 +73,6 @@
             this.textBoxVes.Name = "textBoxVes";
             this.textBoxVes.Size = new System.Drawing.Size(100, 20);
             this.textBoxVes.TabIndex = 3;
-            this.textBoxVes.TextChanged += new System.EventHandler(this.textBoxVes_TextChanged);
             // 
             // buttonCalculator
             // 
@@ -100,11 +103,65 @@
             this.Clear.UseVisualStyleBackColor = true;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
+            // radBtnMan
+            // 
+            this.radBtnMan.AutoSize = true;
+            this.radBtnMan.Location = new System.Drawing.Point(174, 12);
+            this.radBtnMan.Name = "radBtnMan";
+            this.radBtnMan.Size = new System.Drawing.Size(70, 17);
+            this.radBtnMan.TabIndex = 7;
+            this.radBtnMan.TabStop = true;
+            this.radBtnMan.Text = "Мужчина";
+            this.radBtnMan.UseVisualStyleBackColor = true;
+            this.radBtnMan.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radBtnWo
+            // 
+            this.radBtnWo.AutoSize = true;
+            this.radBtnWo.Location = new System.Drawing.Point(250, 12);
+            this.radBtnWo.Name = "radBtnWo";
+            this.radBtnWo.Size = new System.Drawing.Size(75, 17);
+            this.radBtnWo.TabIndex = 8;
+            this.radBtnWo.TabStop = true;
+            this.radBtnWo.Text = "Женщина";
+            this.radBtnWo.UseVisualStyleBackColor = true;
+            this.radBtnWo.CheckedChanged += new System.EventHandler(this.radBtnWo_CheckedChanged);
+            // 
+            // ageNum
+            // 
+            this.ageNum.Location = new System.Drawing.Point(302, 64);
+            this.ageNum.Minimum = new decimal(new int[] {
+            18,
+            0,
+            0,
+            0});
+            this.ageNum.Name = "ageNum";
+            this.ageNum.Size = new System.Drawing.Size(120, 20);
+            this.ageNum.TabIndex = 9;
+            this.ageNum.Value = new decimal(new int[] {
+            18,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(299, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Возраст";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ageNum);
+            this.Controls.Add(this.radBtnWo);
+            this.Controls.Add(this.radBtnMan);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.result);
             this.Controls.Add(this.buttonCalculator);
@@ -114,6 +171,7 @@
             this.Controls.Add(this.rost);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.ageNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,6 +186,10 @@
         private System.Windows.Forms.Button buttonCalculator;
         private System.Windows.Forms.Label result;
         private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.RadioButton radBtnMan;
+        private System.Windows.Forms.RadioButton radBtnWo;
+        private System.Windows.Forms.NumericUpDown ageNum;
+        private System.Windows.Forms.Label label1;
     }
 }
 
