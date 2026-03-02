@@ -97,6 +97,7 @@
             this.buttonAddOcenka.TabIndex = 5;
             this.buttonAddOcenka.Text = "add";
             this.buttonAddOcenka.UseVisualStyleBackColor = true;
+            this.buttonAddOcenka.Click += new System.EventHandler(this.buttonAddOcenka_Click);
             // 
             // label1
             // 
