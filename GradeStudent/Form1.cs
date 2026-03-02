@@ -6,6 +6,8 @@ namespace GradeStudent
 {
     public partial class Form1 : Form
     {
+        double sum = 0, count = 0;
+
         List<string> subjects = new List<string>();
         List<List<int>> allGrades = new List<List<int>>();
 
@@ -77,7 +79,6 @@ namespace GradeStudent
 
         private void buttonAddOcenka_Click(object sender, EventArgs e)
         {
-            double sum = 0, count = 0;
             if (listBox1.SelectedIndex == -1)
             {
                 label1.Text = "Предмет не выбран!";
@@ -92,13 +93,16 @@ namespace GradeStudent
 
             if (ocenka >= 2 && ocenka <= 5)
             {
+                sum += ocenka;
+                count++;
                 int subjectIndex = listBox1.SelectedIndex;
                 allGrades[subjectIndex].Add(ocenka);
 
                 UpdateGradesList();
-
+                double avg = sum / count;
                 textBoxOcenka.Clear();
                 label1.Text = "";
+                labelAVG.Text = $"{avg}";
             }
             else
             {
